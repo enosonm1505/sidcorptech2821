@@ -19,12 +19,12 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon EKS...
-      - aws sts get-caller-identity
-      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
-      - kubectl get svc
       - aws configure set aws_access_key_id $default_access_key
       - aws configure set aws_secret_access_$key default_secret_key
       - aws configure set default.region us-west-2
+      - aws sts get-caller-identity
+      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
+      - kubectl get svc
       - aws sts get-caller-identity
       - echo check config 
       - kubectl config view --minify
