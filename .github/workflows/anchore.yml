@@ -41,7 +41,6 @@ jobs:
       with:
         image: "localbuild/testimage:latest"
         fail-build: true
-        severity-cutoff: critical
     - name: Upload vulnerability report
       uses: github/codeql-action/upload-sarif@v2
       with:
